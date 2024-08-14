@@ -2,14 +2,32 @@
 <html>
   {{ template "head" . }} {{ template "style" }}
   <!-- -->
-  {{ template "themescript" }} {{ template "header" }}
-  <body>
-    {{ template "body" . }}
+  {{ template "themescript" }}
+  <body
+    style="height: 100dvh; width: 100%; display: flex; flex-direction: column"
+  >
+    {{ template "header" }}
+    <div
+      style="
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      "
+    >
+      <div style="height: 100%">{{ template "body" . }}</div>
+      <div>{{ template "footer" .}}</div>
+    </div>
   </body>
 </html>
 
 {{ define "head" }}
 <head>
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2003667605915500"
+    crossorigin="anonymous"
+  ></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NCCUCS Past Papers Web</title>
@@ -124,6 +142,29 @@
     })()
   </script>
 </header>
+{{ end }}
+
+<!-- -->
+
+{{ define "footer" }}
+<footer style="max-height: 150px">
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2003667605915500"
+    crossorigin="anonymous"
+  ></script>
+  <!-- nccu.chaoting.xyz-footer -->
+  <ins
+    class="adsbygoogle"
+    style="display: block"
+    data-ad-client="ca-pub-2003667605915500"
+    data-ad-slot="8626025780"
+    data-full-width-responsive="true"
+  ></ins>
+  <script>
+    ;(adsbygoogle = window.adsbygoogle || []).push({})
+  </script>
+</footer>
 {{ end }}
 
 <!-- -->
